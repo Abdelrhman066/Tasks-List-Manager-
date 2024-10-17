@@ -1,0 +1,38 @@
+<h1 class="text-center bg-primary header ">Your Tasks List</h1>
+@if (tasksService.TaskList.length==0) {
+  <div class="alert alert-danger text-center container">There is No Tasks Yet ....</div>
+}
+@else {
+  <div class="container table-responsive">
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Details</th>
+          <th>Complete</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    <tbody>
+      @for (task of tasksService.TaskList; track $index) {
+        <tr>
+          <td class="title"[class.lineThrough]="completedTasks[$index]">{{task.title}}</td>
+          <td class="detail" [class.lineThrough]="completedTasks[$index]">{{task.description}}</td>
+          <td><input class="checkbox" type="checkbox"  [(ngModel)]="completedTasks[$index]" ></td>
+          <td>
+            <button class="btn btn-primary mx-1 " [disabled]="completedTasks[$index]" [routerLink]="['/task',$index]">Update</button>
+            <button class="btn btn-danger mx-1" (click)="deleteTask($index)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+
+    </table>
+  </div>
+
+}
+<div class="container">
+  <button class="btn btn-success mx-1 my-1" routerLink="/add-task">Add New Task</button>
+  <button class="btn btn-danger mx-1 my-1" (click)="deleteAllTasks()" >Delete All Tasks</button>
+</div>
+

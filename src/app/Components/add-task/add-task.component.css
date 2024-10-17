@@ -1,0 +1,21 @@
+h2{
+  margin-bottom: 60px;
+  background-color: #14a44edc;
+  color: white;
+}
+
+textarea{
+  margin-top: 20px;
+  resize: none;
+}
+button{
+  width: 150px;
+}
+.buttons{
+  margin-top: 20px;
+}
+
+p{
+  font-size: 14px;
+  letter-spacing: 1.4px;
+}

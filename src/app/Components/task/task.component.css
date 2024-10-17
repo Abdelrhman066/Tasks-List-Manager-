@@ -1,0 +1,13 @@
+h2{
+  margin-bottom: 60px;
+  background-color: #3B71CA;
+  color: white;
+}
+
+textarea{
+  margin-bottom: 20px;
+  resize: none;
+}
+button{
+  width: 150px;
+}

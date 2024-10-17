@@ -1,0 +1,11 @@
+<h2 class="alert alert-warning text-center container">Update Task</h2>
+
+<div class="container">
+
+  <input type="text" class="form-control my-2" [(ngModel)]="taskObject.title" placeholder="Enter Task Title" required>
+  <textarea name="details" id="" [(ngModel)]="taskObject.description" class="form-control my-2" placeholder="Enter Task Details" required></textarea>
+
+
+  <button class="btn btn-primary mx-2 my-1" (click)="updateTask()">Update</button>
+  <button class="btn btn-danger mx-2 my-1" routerLink="/">Cancel</button>
+</div>
